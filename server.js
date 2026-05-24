@@ -31,6 +31,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // ── API Routes ──────────────────────────────────────────────────────────────
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ status: "K" });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/settings", settingsRoutes);
 app.use("/api/warehouses", warehouseRoutes);
